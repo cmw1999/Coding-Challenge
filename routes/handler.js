@@ -21,7 +21,7 @@ req_handler.get('/', (req, res) => {
         '                              response body including the customer<br/>' +
         '                              data and its identifier provided by<br/>' +
         '                              the persistent data store.<br/>' +
-        '                              Body must be json.<br/>')
+        '                              Response body must be json.<br/>')
 });
 
 // GET /customers
