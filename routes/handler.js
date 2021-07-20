@@ -5,7 +5,22 @@ const Post = require('../models/Post');
 // default response
 
 req_handler.get('/', (req, res) => {
-    res.send('Welcome to Cooper Wineberg\'s Test Project.\nBuild a HTTP REST API in {Java|Node.js|Python} for a service that ingests and returns customer data')
+    res.send('Welcome to Cooper Wineberg\'s Test Project.\nBuild a HTTP REST API in {Java|Node.js|Python} for a service that ingests and returns customer data\n' + 
+        'Gets\n' +
+        '/                             Default page\n' +
+        '/ customers                    Returns HTTP 200 OK with a JSON\n' +
+        'response containing all customer data\n' +
+        '/ customers ? city = "Some City"   Returns a HTTP 200 OK with a JSON\n' +
+        'response body containing only customers\n' +
+        'that live in a specified city.\n' +
+        '/ customers / { customerId }       Returns HTTP 200 OK with a JSON\n' +
+        'response containing customer data\n' +
+        'for the specified customer.\n\n' +
+        '/customers                    Returns a HTTP 200 OK with a JSON \n' +
+        '                              response body including the customer\n' +
+        '                              data and its identifier provided by\n' +
+        '                              the persistent data store.\n' +
+        '                              Body must be json.\n')
 });
 
 // GET /customers
