@@ -1,32 +1,30 @@
 const app = require('express')();
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //mongoose > mongoDB server > WiredTiger Storage Engine > File
 const bodyparser = require('body-parser');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080; // not used on heroku
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`); //logging port
 });
 
 require('dotenv/config');
-// imports
+
+// import requests handler
 const handler = require('./routes/handler');
 
 app.use(bodyparser.json());
 
-app.get(
-    PORT,
-    () => console.log(`We are live on http://localhost:${PORT}`)
-)
-
-// posts
+// requests sent here
 app.use('/', handler);
 
-const url = process.env.DB_CON;
+// connect to the database
+const url = process.env.DB_CON; 
 const connectionParams = {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 }
+
 mongoose.connect(url, connectionParams)
     .then(() => {
         console.log('Connected to database ')
@@ -34,4 +32,3 @@ mongoose.connect(url, connectionParams)
     .catch((err) => {
         console.error(`Error connecting to the database. \n${err}`);
     })
-
