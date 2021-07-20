@@ -3,7 +3,7 @@ Coding Challenge for HEB Digital by Cooper Wineberg
 
 ---
 # Usage:
-depoloyed to a [heroku app](https://hebcodingchallengenodejs.herokuapp.com/)
+deployed to a [heroku app](https://hebcodingchallengenodejs.herokuapp.com/)
 ---
 # Gets
 
