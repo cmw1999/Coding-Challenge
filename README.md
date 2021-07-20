@@ -2,9 +2,9 @@
 Coding Challenge for HEB Digital by Cooper Wineberg
 
 ---
-# USAGE:
+# Usage:
 depoloyed to a [heroku app](https://hebcodingchallengenodejs.herokuapp.com/)
-
+---
 # Gets
 
 ```
@@ -19,6 +19,7 @@ depoloyed to a [heroku app](https://hebcodingchallengenodejs.herokuapp.com/)
                               for the specified customer.
 
 ```
+---
 # Posts:
 
 ```
@@ -30,6 +31,7 @@ depoloyed to a [heroku app](https://hebcodingchallengenodejs.herokuapp.com/)
                               Body must be json.
 
 ```
+---
 example json
 ```
 {
