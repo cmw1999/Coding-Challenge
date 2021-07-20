@@ -19,8 +19,8 @@ req_handler.get('/customers', (req, res, next) => {
             Post.find(query).then(data => {
                 res.status(200).json(data);
             })
-        } catch (err) {
-            res.status(500).json({
+        } catch (err) { // no 400 for user not found
+            res.status(400).json({
                 message: err
             })
         }
@@ -31,7 +31,7 @@ req_handler.get('/customers', (req, res, next) => {
                 res.status(200).json(data);
             })
         } catch (err) {
-            res.response(500).json({
+            res.response(400).json({
                 message: err
             })
         }
@@ -56,7 +56,7 @@ req_handler.post('/customers', (req, res) => {
     post.save().then(data => {
         res.status(200).json(data);
     }).catch(err => {
-        res.response(500).json({
+        res.response(400).json({
             message: err
         })
     })
@@ -70,7 +70,7 @@ req_handler.get('/customers/:customerID', (req, res) => {
             res.status(200).json(data);
         })
     } catch (err) {
-        res.response(500).json({
+        res.response(400).json({
             message: err
         })
     }
